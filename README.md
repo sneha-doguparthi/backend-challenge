@@ -41,7 +41,9 @@ Visual studio code, Postman, MongoDBAtlas
 
 ## Challenges
 
-The provided API intermittently fails to deliver XML data, leading to issues in data retrieval. It gives an Axios error but sometimes it works correctly
+The provided API intermittently fails to deliver XML data, leading to issues in data retrieval. It gives an Axios error but sometimes it works correctly.
+
+When requests are sent back to back, provided API gives Axios errors which disables the user to test this project
 
 ## Future Enhancements
 
