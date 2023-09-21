@@ -51,6 +51,10 @@ Visual studio code, Postman, MongoDBAtlas
 
 ## Recording of the working API
 
+
+https://github.com/sneha-doguparthi/backend-challenge/assets/65627723/3be4b88e-cf93-48b4-ba4f-981cad3d5304
+
+
 ## Challenges
 
 The provided API intermittently fails to deliver XML data, leading to issues in data retrieval. It gives an Axios error but sometimes it works correctly.
