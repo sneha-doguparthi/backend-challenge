@@ -6,6 +6,10 @@
     Clone the repository
     Install the dependencies - npm install
     Build the docker image and run the container 
+
+        docker build -t backend-challenge .
+        docker run -dp 127.0.0.1:3000:3000 backend-challenge
+
     Send HTTP requests for the defined Endpoints
 
     ## Connecting to MongoDB
@@ -43,7 +47,9 @@
     ## Challenges
 
     The provided API intermittently fails to deliver XML data, leading to issues in data retrieval
-    It gives an Axios error but sometimes it works correctly
+    It gives an Axios error but sometimes it works correctly.
+
+    When requests are send back to back, provided API gives Axios errors which disables the user to test this project
 
     ## Future Enhancements
 

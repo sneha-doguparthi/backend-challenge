@@ -1,5 +1,5 @@
 const VehicleData = require('../../src/vehicles/parseXml');
-const VehicleService = require('../../src/vehicles/service')
+const VehicleService = require('../../src/vehicles/vehicleService')
 jest.mock('../../src/vehicles/parseXml');
 const mockData = {
   "makeId":"11253",

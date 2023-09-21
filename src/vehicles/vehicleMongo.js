@@ -1,11 +1,11 @@
-const { connectToDatabase } = require('../database');
+const { getConnection } = require('../database');
 
 const saveVehicleData = async (vehicleData) => {
   try {
-    const db = await connectToDatabase();
+    const db = await getConnection();
     const collection = db.collection('vehicles');
 
-    await collection.insertMany(vehicleData)
+    await collection.insertMany(vehicleData);
 
     console.log('Vehicle Data saved to the database.');
   } catch (error) {
@@ -14,5 +14,5 @@ const saveVehicleData = async (vehicleData) => {
 };
 
 module.exports = {
-  saveVehicleData,
+  saveVehicleData
 };

@@ -5,7 +5,7 @@ const mongouri = uri.mongoUri
 
 const client = new MongoClient(mongouri);
 
-async function connectToDatabase() {
+async function getConnection() {
   try {
     await client.connect();
     return client.db();
@@ -15,4 +15,4 @@ async function connectToDatabase() {
   }
 }
 
-module.exports = { connectToDatabase };
+module.exports = { getConnection };

@@ -1,30 +1,26 @@
 const axios = require('axios');
-const { getVehicleMakes } = require('../../src/vehicles/parseXml');
-
-const mockXMLData =
-    `<?xml version="1.0" encoding="UTF-8"?>
-<AllVehicleMakes>
-<Make_ID>4877</Make_ID>
-<Make_Name>1/OFF KUSTOMS, LLC</Make_Name>
-</AllVehicleMakes></xml>`
-
-const mockJSONData = {
-    "AllVehicleMakes": {
-        "Make_ID": ["4877"],
-        "Make_Name": ["1/OFF KUSTOMS, LLC"]
-    }
-}
+const { getVehicleMakes, getVehicleTypesForMake } = require('../../src/vehicles/parseXml');
+const { mockXMLVehicleMakeData,mockJSONVehicleMakeData, mockXMLVehicleTypeData, mockJSONVehiclyTypeData} = require('./mock');
 
 const parseXMLToJSON = jest.fn()
 const mockAxios = axios
 jest.mock('axios')
 
 describe("Parse Xml", () => {
-    test("Get the vehicle makes by pasing XML to JSON", async () => {
-        mockAxios.get.mockResolvedValue({ data: mockXMLData });
-        parseXMLToJSON.mockResolvedValue(mockJSONData); 
+    test("Get the Vehicle makes in XML and parse XML to JSON", async () => {
+        mockAxios.get.mockResolvedValue({ data: mockXMLVehicleMakeData });
+        parseXMLToJSON.mockResolvedValue(mockJSONVehicleMakeData); 
         const result = await getVehicleMakes();
-        expect(result).toEqual(mockJSONData);
+        expect(result).toEqual(mockJSONVehicleMakeData);
+        expect(mockAxios.get).toHaveBeenCalled();
+    });
+    test("Get the vehicle type for each make in XML and parse it to JSON", async () => {
+        mockAxios.get.mockResolvedValue({ data: mockXMLVehicleTypeData });
+        parseXMLToJSON.mockResolvedValue(mockJSONVehiclyTypeData); 
+        const result = await getVehicleTypesForMake();
+        expect(result).toEqual(mockJSONVehiclyTypeData);
         expect(mockAxios.get).toHaveBeenCalled();
     })
+
+
 })
