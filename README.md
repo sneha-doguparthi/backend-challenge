@@ -42,7 +42,7 @@ Save Vehicle Data in database - POST /vehicleData - does not have any body to se
 [Node.js], [MongoDB]
 
 - Node : Node.js helps in adding the api's real quick and have the server up and running under a minute
-- 
+
 - MongoDB : MongoDB is a document-based daatabase which gives the flexibility of storing data and MongoDB is designed for horizontal scalability. It provides excellent read and write performance
 
 ## Tools
