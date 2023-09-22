@@ -12,7 +12,7 @@ Build the docker image and run the container
 
 Send HTTP requests for the defined Endpoints
 
-## Connecting to MongoDB
+## Pre- requisites
 
 Add mongo uri in src/config/keys.js
 
