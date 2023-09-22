@@ -6,8 +6,6 @@ This is a backend service to parse the Xml data to JSON format and save in the d
 
 Clone the repository
 
-Install the dependencies - npm install
-
 Build the docker image and run the container
 
 Send HTTP requests for the defined Endpoints
