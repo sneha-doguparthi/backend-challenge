@@ -14,27 +14,20 @@ Send HTTP requests for the defined Endpoints
 
 Add mongo uri in src/config/keys.js
 
-## Test API's in Postman
+## When the server is started
 
-Get Vehicle Data - GET /vehicleData
-
-When the user does a HTTP GET on /vehicleData,
-
-    1. the service fetches the XML data from https://vpic.nhtsa.dot.gov/api/vehicles/getallmakes?format=XML to get all the vehicle makes. Parse the XML to JSON data
+    1. the service parses the XML data from https://vpic.nhtsa.dot.gov/api/vehicles/getallmakes?format=XML to get all the vehicle makes. Parse the XML to JSON data
     
-    2. the service fetches the XML data for each make to get the vehicle types individually. Parses the XML to JSON data
+    2. the service parses the XML data for each make to get the vehicle types individually. Parses the XML to JSON data
     
     3. Combines the data in the requested format of https://gist.github.com/mbaigbimm/d340e7800d17737482e71c9ad1856f68
     
-    4. Returns the JSON data
+    4. Saves Vehicle Data in database, saves the JSON data into MongoDB
 
-Save Vehicle Data in database - POST /vehicleData - does not have any body to send from the request but saves the values in database
+## Test GraphQL API
+Get Vehicle Data - /graphQL
 
-    When the user does a HTTP POST on /vehicleData
-    
-        1. Gets the JSON data using the above steps
-        
-        2. Saves the JSON data into MongoDB
+The service fetches the vehicle data from database.
 
 ## Tech Stack
 [Node.js], [MongoDB], [GraphQL]
@@ -52,7 +45,6 @@ Visual studio code, Postman, MongoDBAtlas
 ## Recording of the working API
 
 https://github.com/sneha-doguparthi/backend-challenge/assets/65627723/35586934-9b5d-451e-ab6a-d075adc3a366
-
 
 ## Challenges
 
