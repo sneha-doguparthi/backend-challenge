@@ -26,7 +26,7 @@ startServer().catch((error) => {
 });
 
 // scheduled job for every 6 hours
-cron.schedule('* */6 * * *', async () => {
+cron.schedule('0 */6 * * *', async () => {
   console.log('Scheduled job to Parse XML started.');
   await parseVehicleXmlData();
   console.log('Scheduled job completed.');
