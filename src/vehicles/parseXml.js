@@ -1,6 +1,7 @@
 const axios = require('axios');
 const xml2jsParse = require('xml2js').parseString;
 const cache = require('./cache');
+const { saveVehicleData } = require('./vehicleMongo');
 
 const parseXMLToJSON = async (xmlData) => {
     return new Promise((resolve, reject) => {
@@ -36,7 +37,7 @@ const getVehicleTypesForMake = async (makeId) => {
     }
 };
 
-const getVehicleData = async () => {
+const parseVehicleXmlData = async () => {
     const cachedVehicleData = cache.get('vehicleData');
     const vehicleMakesJSONData = await getVehicleMakes();
     const allVehicleMakes = vehicleMakesJSONData.Response.Results[0].AllVehicleMakes;
@@ -69,10 +70,11 @@ const getVehicleData = async () => {
 
     const vehicleData = results.filter((result) => result !== null);
     cache.set('vehicleData', vehicleData);
+    saveVehicleData(vehicleData);
     return vehicleData;
 }
 module.exports = {
     getVehicleMakes,
     getVehicleTypesForMake,
-    getVehicleData
+    parseVehicleXmlData
 };

@@ -1,10 +1,8 @@
 
 const express = require('express');
 const router = express.Router();
-const {getVehicleData,saveVehicleData} = require('../vehicles/vehicleService')
+const {getVehicleData} = require('../vehicles/vehicleService')
 
 router.get('/', getVehicleData);
-
-router.post('/', saveVehicleData)
 
 module.exports = router;
