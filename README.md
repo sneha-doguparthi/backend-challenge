@@ -51,8 +51,7 @@ Visual studio code, Postman, MongoDBAtlas
 
 ## Recording of the working API
 
-
-https://github.com/sneha-doguparthi/backend-challenge/assets/65627723/3be4b88e-cf93-48b4-ba4f-981cad3d5304
+https://github.com/sneha-doguparthi/backend-challenge/assets/65627723/35586934-9b5d-451e-ab6a-d075adc3a366
 
 
 ## Challenges
